@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dhruv Shah — Portfolio</title>
+<meta name="description" content="Portfolio of Dhruv Shah, B.Tech student.">
+<meta name="theme-color" content="#0b1020">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add('js');</script>
+<style>
+:root{
+  --bg:#0b1020; --card:rgba(255,255,255,.04); --ink:#eaf0ff; --muted:#9aa5c0;
+  --accent:#8b6cff; --accent2:#22d3ee; --accent3:#f472b6;
+  --line:rgba(255,255,255,.09);
+  --grad:linear-gradient(135deg,#8b6cff 0%,#22d3ee 100%);
+  --head:'Bricolage Grotesque','Segoe UI',sans-serif;
+  --body:'DM Sans','Segoe UI',sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:var(--bg);scroll-behavior:smooth;scroll-padding-top:70px}
+body{font-family:var(--body);color:var(--ink);line-height:1.7;font-size:17px;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
+  background:
+    radial-gradient(600px 400px at 10% 5%,rgba(139,108,255,.22),transparent 70%),
+    radial-gradient(600px 450px at 95% 30%,rgba(34,211,238,.14),transparent 70%),
+    radial-gradient(500px 400px at 20% 90%,rgba(244,114,182,.12),transparent 70%)}
+a{color:inherit}
+::selection{background:var(--accent);color:#fff}
+:focus-visible{outline:3px solid var(--accent2);outline-offset:3px}
+h1,h2,h3{font-family:var(--head);line-height:1.1}
+.wrap{max-width:1000px;margin:0 auto;padding:0 24px}
+section{padding:88px 0;border-top:1px solid var(--line)}
+h2{font-size:clamp(2rem,5vw,3rem);margin-bottom:34px;font-weight:800;letter-spacing:-.02em}
+h2::after{content:"";display:block;width:56px;height:4px;border-radius:4px;background:var(--grad);margin-top:14px}
+.lead{color:var(--muted);max-width:60ch;margin:-14px 0 40px}
+.grad{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+
+/* nav */
+header{position:sticky;top:0;z-index:10;background:rgba(11,16,32,.7);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+nav{display:flex;justify-content:space-between;align-items:center;height:60px}
+.logo{font-family:var(--head);font-weight:800;font-size:1.3rem;text-decoration:none;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+nav ul{display:flex;gap:22px;list-style:none}
+nav ul a{text-decoration:none;color:var(--muted);font-size:.95rem;transition:color .2s}
+nav ul a:hover{color:var(--accent2)}
+#menu{display:none;background:none;border:1px solid var(--line);border-radius:8px;padding:6px 12px;font:inherit;cursor:pointer;color:var(--ink)}
+
+/* hero */
+.hero{padding:120px 0 100px;border-top:0}
+.hero small{display:inline-block;color:var(--accent2);background:rgba(34,211,238,.08);border:1px solid rgba(34,211,238,.25);padding:5px 14px;border-radius:999px;font-size:.85rem}
+.hero h1{font-size:clamp(3rem,10vw,6.5rem);font-weight:800;letter-spacing:-.035em;margin:22px 0 24px}
+.hero p{font-size:1.2rem;max-width:40ch;color:var(--muted)}
+.btns{display:flex;gap:12px;margin-top:34px;flex-wrap:wrap}
+.btn{display:inline-block;padding:13px 26px;border-radius:999px;text-decoration:none;font-weight:500;border:1px solid rgba(255,255,255,.25);transition:transform .2s,box-shadow .2s,background .2s}
+.btn.primary{background:var(--grad);border-color:transparent;color:#fff;box-shadow:0 8px 28px rgba(139,108,255,.4)}
+.btn:hover{transform:translateY(-3px);background:rgba(255,255,255,.1)}
+.btn.primary:hover{background:var(--grad);box-shadow:0 12px 34px rgba(34,211,238,.4)}
+
+/* about */
+.about{display:grid;grid-template-columns:1fr 2fr;gap:44px;align-items:start}
+.avatar{aspect-ratio:1;background:linear-gradient(135deg,rgba(139,108,255,.3),rgba(34,211,238,.22));border:1px solid var(--line);border-radius:28px;display:grid;place-items:center;font-family:var(--head);font-size:4.5rem;font-weight:800;color:#fff;overflow:hidden;box-shadow:0 20px 60px rgba(139,108,255,.25)}
+.avatar img{width:100%;height:100%;object-fit:cover}
+.about h3{font-size:1.5rem}
+.facts{margin:18px 0 22px;display:grid;gap:4px;color:var(--muted)}
+.facts b{color:var(--ink);font-weight:500}
+.about p{margin-bottom:16px;color:#c3cce2}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
+.tag{background:rgba(139,108,255,.14);color:#c9bcff;border:1px solid rgba(139,108,255,.3);padding:4px 14px;border-radius:999px;font-size:.88rem;font-weight:500}
+
+/* cards */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:26px;backdrop-filter:blur(6px);transition:transform .25s,border-color .25s,box-shadow .25s}
+.card:hover{transform:translateY(-6px);border-color:rgba(139,108,255,.55);box-shadow:0 18px 44px rgba(139,108,255,.18)}
+.card h3{font-size:1.25rem;margin-bottom:8px}
+.card p{color:var(--muted);font-size:.97rem;margin-bottom:14px}
+.card .tags{margin-top:0}
+
+/* timeline */
+.timeline{border-left:2px solid rgba(139,108,255,.45);padding-left:30px;display:grid;gap:36px}
+.timeline article{position:relative}
+.timeline article::before{content:"";position:absolute;left:-39px;top:8px;width:16px;height:16px;border-radius:50%;background:var(--bg);border:3px solid var(--accent2);box-shadow:0 0 14px rgba(34,211,238,.7)}
+.when{color:var(--accent2);font-weight:500;font-size:.9rem;letter-spacing:.03em}
+.timeline h3{font-size:1.35rem;margin:3px 0 6px}
+.timeline p{color:var(--muted);max-width:62ch}
+
+/* goals + quote */
+.goals{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}
+blockquote{font-family:var(--head);font-size:clamp(1.6rem,3.8vw,2.5rem);font-weight:700;max-width:24ch;margin-bottom:20px;background:linear-gradient(135deg,#c9bcff,#22d3ee,#f472b6);-webkit-background-clip:text;background-clip:text;color:transparent;line-height:1.25}
+
+/* contact */
+.contact a.big{font-family:var(--head);font-size:clamp(1.3rem,4vw,2.3rem);font-weight:700;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;word-break:break-all;text-decoration:none}
+.links{display:flex;gap:14px;flex-wrap:wrap;margin-top:26px}
+footer{padding:30px 0;border-top:1px solid var(--line);color:var(--muted);font-size:.9rem;text-align:center}
+
+/* scroll reveal */
+.js .reveal{opacity:0;transform:translateY(26px);transition:opacity .8s ease,transform .8s ease}
+.js .reveal.in{opacity:1;transform:none}
+
+@media(max-width:760px){
+  #menu{display:block}
+  nav ul{display:none;position:absolute;top:60px;left:0;right:0;background:rgba(11,16,32,.97);flex-direction:column;padding:16px 24px;border-bottom:1px solid var(--line)}
+  nav ul.open{display:flex}
+  .about{grid-template-columns:1fr}
+  .avatar{max-width:200px}
+  section{padding:64px 0}
+}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .js .reveal{opacity:1;transform:none;transition:none}
+  .card,.btn{transition:none}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <nav aria-label="Main">
+      <a class="logo" href="#home">DS</a>
+      <button id="menu" aria-expanded="false" aria-controls="links">Menu</button>
+      <ul id="links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#journey">Journey</a></li>
+        <li><a href="#hobbies">Hobbies</a></li>
+        <li><a href="#goals">Goals</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="hero" id="home">
+  <div class="wrap">
+    <small>Reg. No. 26BCE0930 · VIT Vellore</small>
+    <h1>Hi, I'm<br><span class="grad">Dhruv Shah</span></h1>
+    <p>Aspiring software engineer who loves building technology that solves real problems, with a focus on AI and full-stack development.</p>
+    <div class="btns">
+      <a class="btn primary" href="#skills">See my skills</a>
+      <a class="btn" href="#contact">Get in touch</a>
+    </div>
+  </div>
+</section>
+
+<section id="about" class="reveal">
+  <div class="wrap">
+    <h2>About me</h2>
+    <div class="about">
+      <div class="avatar" aria-label="Profile picture">
+        <!-- To use a photo: save it as photo.jpg next to this file and replace DS with <img src="photo.jpg" alt="Dhruv Shah"> -->
+        DS
+      </div>
+      <div>
+        <h3>B.Tech — CSE CORE</h3>
+        <div class="facts">
+          <span><b>College:</b> VIT Vellore</span>
+          <span><b>Years:</b> 2026 – 2030</span>
+          <span><b>Location:</b> Mumbai, Maharashtra</span>
+        </div>
+        <p>I’m a Computer Science Engineering student who has always been curious about how things work behind the screen. My interest in programming began in school, when I wrote my first few lines of code out of simple curiosity and watched them turn into something that actually ran. That small moment of seeing my own instructions come to life got me hooked. From there, I started teaching myself through online tutorials, small experiments, and plenty of trial and error, and what began as a hobby gradually became a real passion. Today, I’m pursuing CSE to turn that curiosity into a career, and I love the mix of logic, creativity, and problem-solving that programming demands.</p>
+        <p>I learn best by doing. I can read documentation and watch tutorials, but real understanding comes when I break something, trace the bug, and fix it myself. I tend to approach problems by splitting them into smaller pieces, testing each one, and building back up, which makes even intimidating challenges feel manageable. I’m drawn to problems that sit at the intersection of logic and creativity: puzzles where there are many possible solutions and the fun is in finding a cleaner or faster one. I enjoy algorithmic challenges, debugging tricky issues, and designing small tools that make everyday tasks easier. I’m also patient with being stuck, because I’ve learned that confusion is usually the step right before something clicks.</p>
+        <div class="tags">
+          <span class="tag">Problem solver</span>
+          <span class="tag">Curious learner</span>
+          <span class="tag">Team player</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="skills" class="reveal">
+  <div class="wrap">
+    <h2>Skills &amp; tech</h2>
+    <p class="lead">The languages and tools I work with.</p>
+    <div class="grid">
+      <div class="card">
+        <h3>Frontend</h3>
+        <p>Building responsive pages that are easy to use.</p>
+        <div class="tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span></div>
+      </div>
+      <div class="card">
+        <h3>Backend</h3>
+        <p>Writing the logic that runs behind an app.</p>
+        <div class="tags"><span class="tag">Python</span><span class="tag">SQL</span></div>
+      </div>
+      <div class="card">
+        <h3>Core CS</h3>
+        <p>Fundamentals for solving problems clearly.</p>
+        <div class="tags"><span class="tag">DSA</span><span class="tag">OOP</span></div>
+      </div>
+      <div class="card">
+        <h3>Tools</h3>
+        <p>Version control and everyday dev tools.</p>
+        <div class="tags"><span class="tag">Git</span><span class="tag">GitHub</span><span class="tag">VS Code</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="journey" class="reveal">
+  <div class="wrap">
+    <h2>My journey</h2>
+    <p class="lead">From writing my first lines of code to building real projects at VIT Vellore.</p>
+    <div class="timeline">
+      <article>
+        <span class="when">School years</span>
+        <h3>Where it started</h3>
+        <p>I've always been curious about how things work behind the screen. I wrote my first few lines of code out of simple curiosity, and seeing them turn into something that actually ran got me hooked. I started teaching myself through online tutorials and plenty of trial and error.</p>
+      </article>
+      <article>
+        <span class="when">Class 11 &ndash; 12</span>
+        <h3>First real projects</h3>
+        <p>I went beyond the syllabus by building small projects, like a to-do and expense tracker and a simple machine learning model on public datasets. I learned best by breaking things, tracing bugs, and fixing them myself.</p>
+      </article>
+      <article>
+        <span class="when">2026 &ndash; Present</span>
+        <h3>B.Tech at VIT Vellore</h3>
+        <p>I'm building strong foundations in data structures and algorithms while exploring web development and machine learning with Python. I'm working on projects to apply what I learn, and I plan to join clubs, take part in hackathons, and contribute to open source.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="hobbies" class="reveal">
+  <div class="wrap">
+    <h2>Hobbies &amp; interests</h2>
+    <div class="grid">
+      <div class="card"><h3>Problem solving</h3><p>I love puzzles with many possible solutions, where the fun is finding a cleaner or faster one.</p></div>
+      <div class="card"><h3>Building small tools</h3><p>Making apps that simplify everyday tasks keeps me creative and gives me quick wins.</p></div>
+      <div class="card"><h3>Music</h3><p>Listening to music helps me reset and stay focused after long coding sessions.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="goals" class="reveal">
+  <div class="wrap">
+    <h2>Goals</h2>
+    <div class="goals">
+      <div class="card">
+        <h3>Short-term</h3>
+        <p>Over the next 1–2 years, I want to build a strong base in data structures and algorithms, ship a few real projects, and land my first internship.</p>
+        <div class="tags"><span class="tag">DSA</span><span class="tag">Projects</span><span class="tag">Internship</span></div>
+      </div>
+      <div class="card">
+        <h3>Long-term</h3>
+        <p>I want to become a software engineer working in AI and full-stack development, building products that help millions of people.</p>
+        <div class="tags"><span class="tag">AI</span><span class="tag">Full-stack</span><span class="tag">Impact</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="reflection" class="reveal">
+  <div class="wrap">
+    <blockquote>“Break the problem down, test each piece, and keep building.”</blockquote>
+    <p class="lead" style="margin-top:0">Curiosity got me started, and the satisfaction of making something work keeps me going.</p>
+  </div>
+</section>
+
+<section class="contact reveal" id="contact">
+  <div class="wrap">
+    <h2>Contact</h2>
+    <p class="lead">Open to internships, projects, and conversations.</p>
+    <a class="big" href="mailto:dhruvhemalshahemail@gmail.com">dhruvhemalshahemail@gmail.com</a>
+    <div class="links">
+      <a class="btn" href="https://github.com/dhruvhemalshah" target="_blank" rel="noopener">GitHub</a>
+      <a class="btn" href="https://www.linkedin.com/in/dhruv-shah-9391952a8" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">© <span id="year"></span> Dhruv Shah. All rights reserved.</div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+  const btn = document.getElementById('menu'), list = document.getElementById('links');
+  btn.addEventListener('click', () => {
+    const open = list.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open);
+  });
+  list.addEventListener('click', e => {
+    if (e.target.tagName === 'A') { list.classList.remove('open'); btn.setAttribute('aria-expanded', false); }
+  });
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(en => { if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+</body>
+</html>
